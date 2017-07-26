@@ -16,8 +16,7 @@ router.post('/', function (req, res) {
             repository : req.body.repository,
             location : req.body.location,
             collaborators : req.body.collaborators,
-            tags: req.body.tags,
-            numOfCollaborators : req.body.numOfCollaborators
+            tags: req.body.tags
         },
         function (err, project) {
             if (err) return res.status(500).send("There was a problem adding the information to the database.");
@@ -60,18 +59,38 @@ router.put('/:id', function (req, res) {
 
 //ADD A COLLABORATOR TO A PROJECT
 router.put('/:id/addCollaborator', function (req, res) {
-    Project.findByIdAndUpdate(req.params.id, {
-        $set: {
-            "numOfCollaborators": (numOfCollaborators+1),
-            "collaborators": collaborators.push(req.params.collaborators[collaborators.length])
-        }}).exec(function(err, project){
-        if(err) {
-            console.log(err);
-            res.status(500).send(err);
-        } else {
-            res.status(200).send(project);
-}
-});
+
+    if(req.params.collaborators!==undefined){
+        collaborators = new Array()
+        Project.findByIdAndUpdate(req.params.id, {
+
+            $set: {
+                "collaborators": collaborators.push(req.params.collaborators)
+                //"numOfCollaborators": collaborators.length
+
+            }}).exec(function(err, project){
+            if(err) {
+                console.log(err);
+                res.status(500).send(err);
+            } else {
+                res.status(200).send(project);
+            }
+        });
+    }else if(req.params.collaborators==undefined){
+        collaborators = new Array()
+        Project.findByIdAndUpdate(req.params.id, {
+            $set: {
+                "collaborators": collaborators.push(req.params.collaborators)
+            }}).exec(function(err, project){
+            if(err) {
+                console.log(err);
+                res.status(500).send(err);
+            } else {
+                res.status(200).send(project);
+            }
+        });
+    }
+
     });
 
 

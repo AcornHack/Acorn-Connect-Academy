@@ -7,9 +7,9 @@ var ProjectSchema = new mongoose.Schema({
     description: String,
     repository: String,
     location: String,
-    collaborators: { type : Array , "default" : [] },
-    tags: { type : Array , "default" : [] },
-    numOfCollaborators: { type: Number, min: 0, max: 10 }
+    collaborators: [[String]],
+    tags: { type : Array , "default" : [] }//,
+    //numOfCollaborators: { type: Number, min: 0, max: 10 }
 });
 mongoose.model('Project', ProjectSchema);
 
