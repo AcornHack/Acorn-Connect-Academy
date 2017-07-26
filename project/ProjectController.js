@@ -13,15 +13,11 @@ router.post('/', function (req, res) {
     Project.create({
             name : req.body.name,
             description : req.body.description,
-<<<<<<< HEAD
             repository : req.body.repository,
             location : req.body.location,
             collaborators : req.body.collaborators,
             tags: req.body.tags,
             numOfCollaborators : req.body.numOfCollaborators
-=======
-            repository : req.body.repository
->>>>>>> api
         },
         function (err, project) {
             if (err) return res.status(500).send("There was a problem adding the information to the database.");
@@ -62,7 +58,6 @@ router.put('/:id', function (req, res) {
     });
 });
 
-<<<<<<< HEAD
 //ADD A COLLABORATOR TO A PROJECT
 router.put('/:id/addCollaborator', function (req, res) {
     Project.findByIdAndUpdate(req.params.id, {
@@ -79,7 +74,5 @@ router.put('/:id/addCollaborator', function (req, res) {
 });
     });
 
-=======
->>>>>>> api
 
 module.exports = router;
