@@ -1,18 +1,25 @@
 {
-  "name": "CodeTracker",
+  "name": "acorn-connect",
   "version": "1.0.0",
-  "description": "A project for learning coders",
-  "main": "index.js",
+  "description": "API for acorn connect",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Luca Marchal codeluca.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AcornHack/acorn-connect-academy.git"
+  },
+  "author": "Arun Pattni",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AcornHack/acorn-connect-academy/issues"
+  },
+  "homepage": "https://github.com/AcornHack/acorn-connect-academy#readme",
   "dependencies": {
-    "body-parser": "^1.12.4",
-    "express": "^4.12.3",
-    "express-handlebars": "^2.0.1",
-    "express-session": "^1.11.2",
-    "mongojs": "^0.18.2"
-  }
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "mongoose": "^4.11.3"
+  },
+  "devDependencies": {}
 }
