@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One');
+#brand-title{
+    text-indent: 15px;
+    font-family: Fjalla One;
+}
+#main-nav{
+    background-color: #c1c1c1;
+    color: #5e5e5e;
+    font-family: Fjalla One;
+}
+body{
+    background-color: #eeeeee;
+}
+#title{
+    font-family: Fjalla One;
+    text-align: center;
+ }
+hr.style2 {
+    border-top: 3px double #8c8b8b;
+    width:20%;
+}
+
+#projectCard{
+    width: 483.888px;
+    height: 210.700px;
+    max-width: 483.888px;
+    max-height: 210.700px;
+
+}
+#projects{
+
+    text-align: center;
+}
