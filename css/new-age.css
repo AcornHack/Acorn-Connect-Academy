@@ -451,7 +451,7 @@ body {
 #button{
   background-color:#0077B5;
   height:50px;
-  width:130px;
+  width:100%;
   color:#FFFFFF;
   border-radius:13px;
   box-shadow: 5px 5px 5px #888;
